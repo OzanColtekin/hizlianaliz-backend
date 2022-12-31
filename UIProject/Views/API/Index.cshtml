@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<h2>API Bilgisi Kaydetme</h2>
+<br />
+@using (Html.BeginForm("SaveAPI", "API", FormMethod.Post))
+        {
+            <input type="text" class="form-control" placeholder="Satıcı ID giriniz..." name="saticiID" /><br />
+            <input type="text" class="form-control" placeholder="API Key değerinizi giriniz..." name="APIKEY" /><br />
+            <input type="text" class="form-control" placeholder="API Secret değerinizi giriniz..." name="APISECRET" /><br />
+            <select name="marketid" id="markets" class="form-control">
+              <option value="1">Trendyol</option>
+              <option value="2">HepsiBurada</option>
+            </select><br />
+            <button class="btn btn-primary">Kaydet</button><br /><br />
+        }
+

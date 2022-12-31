@@ -1,0 +1,62 @@
+﻿@using EntityLayer.Concrate
+@model List<BuyboxTrack>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Trendyol</a>
+    </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+    <br />
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <input type="text" class="form-control" placeholder="Ürün linkini giriniz..." name="url" id="url" /><br />
+            <button class="btn btn-primary" id="addbtn">Ekle</button><br /><br />
+        @for (int x = Model.Count - 1; x >= 0; x--)
+        {
+
+            <div class="card-deck">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Ürünün Fiyatı : </h5>
+                        <img src="~/web/img/undraw_posting_photo.svg" class="card-img" style="width:10rem; height:10rem;" /><a href="#" class="btn btn-danger float-right"><img src="~/web/img/girl.png" class="card-img" style="width:1rem; height:1rem;" /></a>
+                        <p class="card-text"><a href=>Ürüne Gitmek İçin Tıklayınız.</a></p>
+                        <p class="card-text"><small class="text-muted">Ürünler 15 dakika'da bir güncellenmektedir. Son güncellenme tarihi :</small></p>
+
+                    </div>
+                </div>
+            </div><br />
+        }
+    </div>
+</div>
+@section Scripts{
+    <script>
+        $('#addbtn').click(function(){
+            var value = document.getElementById('url').value
+            if(value.length == 0) return toastr["error"]("Ürün link alanı boş geçilemez.","Hata")
+            var sendData = {
+                url: value,
+            };
+            $.ajax({
+                type: "Post",
+                data: sendData,
+                url:"/BuyBoxTracker/AddProduct/",
+
+                success: function(args){
+                    var result = jQuery.parseJSON(args);
+                    if(result["result"] == false) return toastr["error"]("Ürün eklenirken bir hata oluştu!","Hata");
+                    toastr["success"]("Ürün başarı ile eklendi.","Ürün Ekle");
+                    setTimeout(()=>{
+                        window.location = "/BuyBoxTracker/" 
+                    },1500);
+                    
+                }
+
+            });
+        });
+    </script>
+}
+<script src="~/lib/jquery/dist/jquery.js"></script>

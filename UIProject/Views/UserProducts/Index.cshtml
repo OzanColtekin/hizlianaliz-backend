@@ -1,0 +1,55 @@
+﻿@using EntityLayer.Concrate
+@model List<UserProducts>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateProduct", "UserProducts", FormMethod.Post))
+{
+    <button class="btn btn-warning">Ürünleri Getir</button>
+}
+
+<br />
+<div class="col-lg-12">
+    <div class="card mb-4">
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-primary">Ürünler</h6>
+        </div>
+        <div class="table-responsive p-3">
+            <table class="table align-items-center table-flush table-hover" id="dataTableHover">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Güncelle</th>
+                        <th>Barcode</th>
+                        <th>Resim</th>
+                        <th>ProductName</th>
+                        <th>ProdcutBrand</th>
+                        <th>List Price</th>
+                        <th>Sale Price</th>
+                        <th>Stock</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Model)
+                    {
+                        <tr>
+                            <td><a href="/UserProducts/GetProduct/@product.UserProductID" class="btn btn-success">Güncelle</a></td>
+                            <td>@product.Barcode</td>
+                            <td><img src="@product.ImgURL" class="img-responsive" style="width:5rem; height:5rem;"/></td>
+                            <td>@product.Title</td>
+                            <td>@product.Brand</td>
+                            <td>@product.ListPrice</td>
+                            <td>@product.SalePrice</td>
+                            <td>@product.Stock</td>
+                            <td>@product.CategoryName</td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

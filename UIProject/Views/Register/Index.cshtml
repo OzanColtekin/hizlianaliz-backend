@@ -1,0 +1,108 @@
+﻿
+@{
+    Layout = null;
+}
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/login-form/fonts/icomoon/style.css">
+    <link rel="shortcut icon" href="/assets/images/hizli_analiz_favicon-01.png" type="image/png">
+    <link rel="stylesheet" href="/login-form/css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/login-form/css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="/login-form/css/style.css">
+
+    <title>Hızlı Analiz</title>
+</head>
+<body>
+
+
+
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="/login-form/images/undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
+                </div>
+                <div class="col-md-6 contents">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="mb-4">
+                                <h3>Kayıt Ol</h3>
+                                <p class="mb-4">Hızlı analiz, hızlı büyüme.</p>
+                            </div>
+                                <div class="form-group first">
+                                    <label for="username">E-mail</label>
+                                    <input type="text" class="form-control" id="UserMail" name="UserMail">
+
+                                </div><br />
+                                <div class="form-group last mb-4">
+                                    <label for="password">Şifre</label>
+                                    <input type="password" class="form-control" id="UserPassword" name="UserPassword">
+
+                                </div>
+                                <div class="form-group last mb-4">
+                                    <label for="password">Şifre Tekrar</label>
+                                    <input type="password" class="form-control" id="UserPassword2" name="UserPassword">
+
+                                </div>
+    
+                                <span class="caption text-left my-4">&mdash; Zaten Bir Hesabın Var Mı? &mdash;</span>
+                                <a href="/Login/Index" class="login-form">Giriş Yap</a> <br /><br />
+                                <button value="Kayıt Ol" id="btnkayit" class="btn btn-block btn-primary">Kayıt Ol</button>
+                                <span class="d-block text-left my-4 text-muted">&mdash; kayıt ol &mdash;</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="/login-form/js/jquery-3.3.1.min.js"></script>
+    <script src="/login-form/js/popper.min.js"></script>
+    <script src="/login-form/js/bootstrap.min.js"></script>
+    <script src="/login-form/js/main.js"></script>
+</body>
+</html>
+    <script>
+        $('#btnkayit').click(function(){
+            var pw = document.getElementById('UserPassword').value
+            var pw2 = document.getElementById('UserPassword2').value
+            if((pw.length == 0 ) || (pw2.length == 0)) return toastr["error"]("Şifre alanı boş geçilemez.","Hata")
+            if( pw != pw2) return toastr["error"]("Girdiğiniz Şifreler Uyuşmamaktadır.", "Hata")
+            let values = {
+                UserMail: $('#UserMail').val(),
+                UserPassword : $('#UserPassword').val()
+            };
+            $.ajax({
+                data: values,
+                type: "Post",
+                url:"/Register/Index",
+
+                success: function(arg){
+                    let values = jQuery.parseJSON(arg);
+                    if(values.result == false) return toastr["error"]("Bu mail daha önce sisteme kayıt olmuş.","Hata");
+                    toastr["success"]("Kaydınız başarılı bir şekilde oluşturuldu","Kayıt");
+                    setTimeout(()=>{
+                        window.location = "/Profile/"
+                    },1000)
+                }
+            })
+
+
+        })
+    </script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+      
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>

@@ -1,0 +1,215 @@
+﻿@model EntityLayer.Concrate.Categories
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<div id="selectMarket" class="selectmarket">
+    <form>
+        <div class="form-group">
+            <div class="row m-0 border-1 border mt-4 rounded-2 rounded">
+                <div class="col-md-12 p-md-0">
+                    <div class="row m-0 pb-2 pt-3 px-md-3">
+
+                        <div class="col-md-12 ps-md-0 p-0 pb-2 d-flex">
+                            <p class="mb-0 marketPlaceHolder">Pazar Yeri</p>
+                            <select class="js-example-basic-single" id="marketPlaces">
+                                <option>Lütfen bir seçim yapınız</option>
+                                <option value="1">HepsiBurada</option>
+                                <option value="2">Trendyol</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12 pe-md-0 p-0 mt-md-0 mt-3 d-flex">
+                            <p class="mb-0 marketPlaceHolder">Kategori</p>
+                            <select asp-for="CategoryID" asp-items="ViewBag.cat" class="js-example-basic-single" id="marketCategories">
+                                <option>Lütfen bir seçim yapınız.</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="row m-0 form-link pb-2 px-md-3">
+                        <div class="col-md-12 col-12 p-md-0 p-0">
+                            <div class="d-flex sellingBuyingInputBox">
+
+                                <div class="priceBoxes form-floating col-md-6 ">
+                                    <br />
+                                        <label for="floatingInput">Ürün Satış Fiyatı </label>
+                                    <input type="text" class="form-control" id="sellingPrice"
+                                            placeholder="Ürünün Satış Fiyati"/>
+                                </div>
+
+
+                                <div class="priceBoxes form-floating col-md-6 ps-md-2">
+                                    <br />
+                                    <label style="padding-left: 1.4rem" for="floatingInput">Ürün
+                                        Alış Fiyatı</label>
+                                    <input type="text" class="form-control" id="buyingPrice"
+                                            placeholder="Ürün Alış Fiyatı"/>
+                                </div>
+
+
+                                <div id="wareHousePriceBox" hidden
+                                        class="form-floating col-md-4 ps-md-2">
+                                        <label style="padding-left: 1.4rem" class=""
+                                            for="floatingInput">Depoya
+                                        Gönderim</label>
+                                    <input type="text" class="form-control" id="wareHousePrice"
+                                            placeholder=""/>
+
+                                </div>
+
+                                <div id="listingPriceBox" hidden
+                                        class="form-floating col-md-4 ps-md-2">
+                                    <input type="text" class="form-control" id="listingPrice"
+                                            placeholder=""/>
+                                    <label style="padding-left: 1.4rem" class=""
+                                            for="floatingInput">Listeleme
+                                        Bedeli</label>
+                                </div>
+
+                                <div id="oppOfDayBox" hidden class="form-floating col-md-4 ps-md-2">
+                                    <select style="width: 100%;" id="oppOfDay">
+                                        <option></option>
+                                        <option value="1">Evet</option>
+                                        <option value="0">Hayır</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-12 col-12 mt-2 p-0">
+                            <div class="d-flex">
+                                <div class="col-md-4 pe-0 form-link mt-md-0 mt-3 p-0">
+                                    <div class="form-floating"><br />
+                                        <label for="floatingInput">Komisyon %</label>
+                                        <input type="text" class="form-control" id="commissionRate"
+                                                placeholder="Komisyon Oranı"/>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 pe-0 form-link mt-md-0 mt-3 p-0 ps-md-2">
+                                    <div class="form-floating"><br />
+                                        <label for="floatingInput">KDV %</label>
+                                        <input type="text" class="form-control" id="kdvRate"
+                                                placeholder="KDV Oranı"/>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 pe-0 form-link mt-md-0 mt-3 p-0 ps-md-2">
+                                    <div class="form-floating"><br />
+                                        <label for="floatingInput">Kargo Ücreti</label>
+                                        <input type="text" class="form-control" id="cargoPrice"
+                                                placeholder="Kargo Ücreti"/>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="cargoTypeBox" class="row m-0">
+                        <div class="col-12 pb-2 px-md-3 p-0">
+                            <div class="cargo d-flex">
+                                <div class="d-md-flex align-items-center w-100">
+                                    <br />
+                                    <p class="mb-0">
+                                        Kargo Tipi
+                                    </p>
+                                    <div class="d-flex py-md-0 py-2">
+                                        <div class="form-check border-0 m-0 mx-3">
+                                            <input class="form-check-input" type="radio"
+                                                    name="optCargoType" id="optBuyerCargo"
+                                                    value="buyer"/>
+                                            <label class="form-check-label" for="optBuyerCargo">
+                                                Alıcıya Ait
+                                            </label>
+                                        </div>
+                                        <div class="form-check border-0 m-0 me-3">
+                                            <input checked class="form-check-input" type="radio"
+                                                    name="optCargoType" id="optSellerCargo"
+                                                    value="seller"/>
+                                            <label class="form-check-label" for="optSellerCargo">
+                                                Satıcıya Ait
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="d-flex row flex-row justify-content-between align-items-center">
+
+                    <div class="col-11 mb-3 mt-3">
+
+
+                    </div>
+
+                    <!-- <div class="col-1 mb-3 mt-3 d-flex flex-row justify-content-around align-items-center">
+
+                            <div>
+                                <i id="btnSaveForm" class="far fa-save"></i>
+                            </div>
+                        </div>-->
+
+                </div>
+            </div>
+        </div>
+        <button id="btnCalculateCommission" type="button" style="width: 100%;" onclick="ajax()"
+                                class="d-flex btnCalculateCommission justify-content-center">
+                            Komisyon Hesapla
+        </button>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        function ajax(){
+            if(document.getElementById('sellingPrice').value == 0) return swal({
+                title:"Hata",
+                text:"Değerleri boş giremezsiniz",
+                icon:"error",
+            });
+            $.ajax({
+                contentType : "application/json",
+                dataType : "json",
+                type: "get",
+                url: "/Commission/List",
+
+                success: function(arg){
+                    let users = jQuery.parseJSON(arg);
+                    if(users["result"] == true){
+                        swal({
+                          title: "Basarılı",
+                          icon: "success",
+                        });
+                    }
+                    else {
+                        swal({
+                          title: "HATA",
+                          icon: "error",
+                        });
+                    }
+                    
+                }
+            });
+        };
+    </script>
+    <script>
+        function bas(){
+            console.log("basıldı");
+            swal("TEST");
+        };
+    </script>
+}
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

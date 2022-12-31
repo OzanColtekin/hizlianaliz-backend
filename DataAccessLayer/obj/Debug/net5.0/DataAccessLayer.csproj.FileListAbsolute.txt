@@ -1,0 +1,36 @@
+D:\! Ozan\Developer Tools\hizlianaliz\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.deps.json
+D:\! Ozan\Developer Tools\hizlianaliz\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.runtimeconfig.json
+D:\! Ozan\Developer Tools\hizlianaliz\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.runtimeconfig.dev.json
+D:\! Ozan\Developer Tools\hizlianaliz\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.dll
+D:\! Ozan\Developer Tools\hizlianaliz\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.pdb
+D:\! Ozan\Developer Tools\hizlianaliz\DataAccessLayer\bin\Debug\net5.0\EntityLayer.dll
+D:\! Ozan\Developer Tools\hizlianaliz\DataAccessLayer\bin\Debug\net5.0\EntityLayer.pdb
+D:\! Ozan\Developer Tools\hizlianaliz\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csproj.AssemblyReference.cache
+D:\! Ozan\Developer Tools\hizlianaliz\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\! Ozan\Developer Tools\hizlianaliz\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.AssemblyInfoInputs.cache
+D:\! Ozan\Developer Tools\hizlianaliz\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.AssemblyInfo.cs
+D:\! Ozan\Developer Tools\hizlianaliz\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+D:\! Ozan\Developer Tools\hizlianaliz\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csproj.CopyComplete
+D:\! Ozan\Developer Tools\hizlianaliz\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.dll
+D:\! Ozan\Developer Tools\hizlianaliz\DataAccessLayer\obj\Debug\net5.0\refint\DataAccessLayer.dll
+D:\! Ozan\Developer Tools\hizlianaliz\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.pdb
+D:\! Ozan\Developer Tools\hizlianaliz\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.genruntimeconfig.cache
+D:\! Ozan\Developer Tools\hizlianaliz\DataAccessLayer\obj\Debug\net5.0\ref\DataAccessLayer.dll
+D:\1Ozan\DeveloperTools\hizlianaliz\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.deps.json
+D:\1Ozan\DeveloperTools\hizlianaliz\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.runtimeconfig.json
+D:\1Ozan\DeveloperTools\hizlianaliz\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.runtimeconfig.dev.json
+D:\1Ozan\DeveloperTools\hizlianaliz\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.dll
+D:\1Ozan\DeveloperTools\hizlianaliz\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.pdb
+D:\1Ozan\DeveloperTools\hizlianaliz\DataAccessLayer\bin\Debug\net5.0\EntityLayer.dll
+D:\1Ozan\DeveloperTools\hizlianaliz\DataAccessLayer\bin\Debug\net5.0\EntityLayer.pdb
+D:\1Ozan\DeveloperTools\hizlianaliz\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csproj.AssemblyReference.cache
+D:\1Ozan\DeveloperTools\hizlianaliz\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\1Ozan\DeveloperTools\hizlianaliz\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.AssemblyInfoInputs.cache
+D:\1Ozan\DeveloperTools\hizlianaliz\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.AssemblyInfo.cs
+D:\1Ozan\DeveloperTools\hizlianaliz\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+D:\1Ozan\DeveloperTools\hizlianaliz\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csproj.CopyComplete
+D:\1Ozan\DeveloperTools\hizlianaliz\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.dll
+D:\1Ozan\DeveloperTools\hizlianaliz\DataAccessLayer\obj\Debug\net5.0\refint\DataAccessLayer.dll
+D:\1Ozan\DeveloperTools\hizlianaliz\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.pdb
+D:\1Ozan\DeveloperTools\hizlianaliz\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.genruntimeconfig.cache
+D:\1Ozan\DeveloperTools\hizlianaliz\DataAccessLayer\obj\Debug\net5.0\ref\DataAccessLayer.dll

@@ -1,0 +1,54 @@
+﻿@model EntityLayer.Concrate.Users
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Profil Bilgilerini Düzenle</h4>
+            <p class="card-description">
+            Ayarlar
+            </p>
+            <form class="form-sample" method="post" action="/Profile/Update" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="exampleInputName1">İsim</label>
+                <input type="text" class="form-control" name="UserName" id="exampleInputName1" placeholder="Adınız" value="@Model.UserName">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputName1">Soyisim</label>
+                <input type="text" class="form-control" name="UserSurName" id="exampleInputName1" placeholder="Soyadınız" value="@Model.UserSurName">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail3">Mail Adresiniz</label>
+                <input type="email" class="form-control" id="exampleInputEmail3" disabled placeholder="@Model.UserMail">
+            </div>
+            <div class="form-group">
+                <label for="exampleSelectGender">Cinsiyet</label>
+                <select name="Cinsiyet" class="form-control" id="exampleSelectGender">
+                    <option value="Erkek">Erkek</option>
+                    <option value="Kadın">Kadın</option>
+                </select>
+                </div>
+            <div class="form-group">
+                <label>Profil Fotoğrafı</label>
+                <input type="file" name="Picture" class="file-upload-default">
+                <div class="input-group col-xs-12">
+                <input type="text" class="form-control file-upload-info" disabled placeholder="Resim Yükle">
+                <span class="input-group-append">
+                    <button class="file-upload-browse btn btn-primary" type="button">Yükle</button>
+                </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputCity1">Şehir</label>
+                <input name= "Şehir" type="text" class="form-control" id="exampleInputCity1" placeholder="Şehir" value="@Model.Şehir">
+            </div>
+            <button class="btn btn-primary mr-2">Kaydet</button>
+            <a href="/Dashboard/" class="btn btn-light">İptal</a>
+            </form>
+        </div>
+    </div>
+</div>
+

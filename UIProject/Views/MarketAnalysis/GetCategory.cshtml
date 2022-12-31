@@ -1,0 +1,122 @@
+﻿@using EntityLayer.Concrate
+@model List<Products>
+@{
+    ViewData["Title"] = "GetCategory";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+        <div class="row">
+            <div class="col-9">
+            <div class="d-flex align-items-center align-self-start">
+                <h3 class="mb-0">@ViewBag.CatAvg</h3>
+                <p class="text-success ml-2 mb-0 font-weight-medium">+3.5%</p>
+            </div>
+            </div>
+            <div class="col-3">
+            <div class="icon icon-box-success ">
+                <span class="mdi mdi-arrow-top-right icon-item"></span>
+            </div>
+            </div>
+        </div>
+        <h6 class="text-muted font-weight-normal">Ürünlerin Ortalama Fiyatı</h6>
+        </div>
+    </div>
+    </div>
+    <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+        <div class="row">
+            <div class="col-9">
+            <div class="d-flex align-items-center align-self-start">
+                <h3 class="mb-0">@ViewBag.CatMax</h3>
+                <p class="text-success ml-2 mb-0 font-weight-medium">+11%</p>
+            </div>
+            </div>
+            <div class="col-3">
+            <div class="icon icon-box-success">
+                <span class="mdi mdi-arrow-top-right icon-item"></span>
+            </div>
+            </div>
+        </div>
+        <h6 class="text-muted font-weight-normal">En yüksek fiyat</h6>
+        </div>
+    </div>
+    </div>
+    <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+        <div class="row">
+            <div class="col-9">
+            <div class="d-flex align-items-center align-self-start">
+                <h3 class="mb-0">@ViewBag.CatMin</h3>
+                <p class="text-danger ml-2 mb-0 font-weight-medium">-2.4%</p>
+            </div>
+            </div>
+            <div class="col-3">
+            <div class="icon icon-box-danger">
+                <span class="mdi mdi-arrow-bottom-left icon-item"></span>
+            </div>
+            </div>
+        </div>
+        <h6 class="text-muted font-weight-normal">En Düşük Fiyat</h6>
+        </div>
+    </div>
+    </div>
+    <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+        <div class="row">
+            <div class="col-9">
+            <div class="d-flex align-items-center align-self-start">
+                <h3 class="mb-0">@ViewBag.BrandCount</h3>
+                <p class="text-success ml-2 mb-0 font-weight-medium">+3.5%</p>
+            </div>
+            </div>
+            <div class="col-3">
+            <div class="icon icon-box-success ">
+                <span class="mdi mdi-arrow-top-right icon-item"></span>
+            </div>
+            </div>
+        </div>
+        <h6 class="text-muted font-weight-normal">Marka Sayısı</h6>
+        </div>
+    </div>
+    </div>
+    </div>
+<div class="row">
+<div class="col-lg grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+        <h4 class="card-title">İlk 5 Ürün</h4>
+        <div class="table-responsive">
+            <table class="table">
+            <thead>
+                <tr>
+                <th>Barcode</th>
+                <th>Ürün İsmi</th>
+                <th>Fiyat</th>
+                <th>Favori Sayısı</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < @Model.Count; i++)
+                {
+                    if (i == 5) break;
+                    <tr>
+                    <td>@Model[i].ProductBarcode</td>
+                    <td>@Model[i].ProductName</td>
+                    <td>@Model[i].Price</td>
+                    <td>@Model[i].Favories</td>
+                    </tr>
+                } 
+            </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>

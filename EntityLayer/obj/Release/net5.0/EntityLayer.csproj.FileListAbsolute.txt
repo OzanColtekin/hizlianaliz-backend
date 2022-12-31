@@ -1,0 +1,15 @@
+D:\1Ozan\DeveloperTools\hizlianaliz\EntityLayer\bin\Release\net5.0\EntityLayer.deps.json
+D:\1Ozan\DeveloperTools\hizlianaliz\EntityLayer\bin\Release\net5.0\EntityLayer.runtimeconfig.json
+D:\1Ozan\DeveloperTools\hizlianaliz\EntityLayer\bin\Release\net5.0\EntityLayer.runtimeconfig.dev.json
+D:\1Ozan\DeveloperTools\hizlianaliz\EntityLayer\bin\Release\net5.0\EntityLayer.dll
+D:\1Ozan\DeveloperTools\hizlianaliz\EntityLayer\bin\Release\net5.0\EntityLayer.pdb
+D:\1Ozan\DeveloperTools\hizlianaliz\EntityLayer\obj\Release\net5.0\EntityLayer.csproj.AssemblyReference.cache
+D:\1Ozan\DeveloperTools\hizlianaliz\EntityLayer\obj\Release\net5.0\EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\1Ozan\DeveloperTools\hizlianaliz\EntityLayer\obj\Release\net5.0\EntityLayer.AssemblyInfoInputs.cache
+D:\1Ozan\DeveloperTools\hizlianaliz\EntityLayer\obj\Release\net5.0\EntityLayer.AssemblyInfo.cs
+D:\1Ozan\DeveloperTools\hizlianaliz\EntityLayer\obj\Release\net5.0\EntityLayer.csproj.CoreCompileInputs.cache
+D:\1Ozan\DeveloperTools\hizlianaliz\EntityLayer\obj\Release\net5.0\EntityLayer.dll
+D:\1Ozan\DeveloperTools\hizlianaliz\EntityLayer\obj\Release\net5.0\refint\EntityLayer.dll
+D:\1Ozan\DeveloperTools\hizlianaliz\EntityLayer\obj\Release\net5.0\EntityLayer.pdb
+D:\1Ozan\DeveloperTools\hizlianaliz\EntityLayer\obj\Release\net5.0\EntityLayer.genruntimeconfig.cache
+D:\1Ozan\DeveloperTools\hizlianaliz\EntityLayer\obj\Release\net5.0\ref\EntityLayer.dll

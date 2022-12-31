@@ -1,0 +1,195 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<div class="collapse show pb-5" id="collapseExample">
+    <div class="row filter bg-white rounded-3">
+        <div class="col-md-6">
+            <div class="dashboard-box mt-4  px-md-3 px-1">
+                <div class="dashboard-box-inner row m-0 mt-md-2 mt-0 px-4" id="CategoryFilterDiv">
+                    <div class="head-text col-md-12 p-0">
+                        <h1 class="anakategoritext">Ana Kategoriler</h1>
+                        <h1 style="display:none;" class="altkategoritext">Alt Kategoriler</h1>
+                        <p class="anakategoritext">trendyol.com'a ait ana kategorileri görüntülüyorsunuz. Detaylı alt kategori seçmek için <a onclick="change()" href="#">alt kategorileri görüntüleyin</a></p>
+                        <p style="display:none;" class="altkategoritext">trendyol.com'a ait alt kategorileri görüntülüyorsunuz. Ana kategori seçmek için <a onclick="change()" href="#">ana kategorileri görüntüleyin</a></p>
+                    </div>
+                    <div id="anakategoriler" class="row col-md-12">
+                        <div class="col-md-6 p-0">
+                            <div class="form-check">
+                                <input class="form-check-input categoryFilters" data-id="368" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Aksesuar
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 p-0">
+                            <div class="form-check">
+                                <input class="form-check-input categoryFilters" data-id="1071" type="checkbox" value="" id="check2">
+                                <label class="form-check-label" for="check2">
+                                    Elektronik
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 p-0">
+                            <div class="form-check">
+                                <input class="form-check-input categoryFilters" data-id="403" type="checkbox" value="" id="check3">
+                                <label class="form-check-label" for="check3">
+                                    Ayakkabı
+                                </label>
+                            </div>
+                        </div>
+                               
+                        <div class="col-md-6 p-0">
+                            <div class="form-check">
+                                <input class="form-check-input categoryFilters" data-id="1070" type="checkbox" value="" id="check5">
+                                <label class="form-check-label" for="check5">
+                                    Kozmetik & Kişisel Bakım
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 p-0">
+                            <div class="form-check">
+                                <input class="form-check-input categoryFilters" data-id="1219" type="checkbox" value="" id="check6">
+                                <label class="form-check-label" for="check6">
+                                    Süpermarket
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 p-0">
+                            <div class="form-check">
+                                <input class="form-check-input categoryFilters" data-id="758" type="checkbox" value="" id="check7">
+                                <label class="form-check-label" for="check7">
+                                    Ev & Mobilya
+                                </label>
+                            </div>
+                        </div>
+                                
+                        <div class="col-md-6 p-0">
+                            <div class="form-check">
+                                <input class="form-check-input categoryFilters" data-id="2862" type="checkbox" value="" id="check9">
+                                <label class="form-check-label" for="check9">
+                                    Anne & Bebek & Çocuk
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 p-0">
+                            <div class="form-check">
+                                <input class="form-check-input categoryFilters" data-id="2859" type="checkbox" value="" id="check10">
+                                <label class="form-check-label" for="check10">
+                                    Yaşam
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 p-0">
+                            <div class="form-check">
+                                <input class="form-check-input categoryFilters" data-id="522" type="checkbox" value="" id="check11">
+                                <label class="form-check-label" for="check11">
+                                    Giyim
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 p-0">
+                            <div class="form-check">
+                                <input class="form-check-input categoryFilters" data-id="3186" type="checkbox" value="" id="check12">
+                                <label class="form-check-label" for="check12">
+                                    Spor & Outdoor
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="altkategoriler" style="display:none;" class="row col-md-12">
+                        <div class="col-md-12">
+                            <select id="Kategoriler" class="altkategoriler js-example-basic-multiple" onchange="KategoriSelectTo()" name="state" style="width: 100%"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mt-2">
+            <div class="row bg-white m-0 mt-4" id="OtherFilterDiv">
+                <div class="head-text col-md-12">
+                    <h1>Filtreler</h1>
+                    <p>Aşağıdaki alanda filtre başlıklarına göre minimum ve maksimum değer girerek sonuç görüntüleyebilirsiniz </p>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group mb-4">
+                        <span class="input-group-text" id="inputName"><i class="bi bi-tag me-2"></i>Fiyat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <input type="text" placeholder="Min" class="form-control productFilters" data-name="minprice" aria-label="Sizing example input" aria-describedby="inputName">
+                        <input type="text" placeholder="Max" class="form-control productFilters" data-name="maxprice" aria-label="Sizing example input" aria-describedby="inputName">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group mb-4">
+                        <span class="input-group-text" id="inputName"><i class="bi bi-cart-check me-2"></i>Ürün Yorum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <input type="text" placeholder="Min" class="form-control productFilters" data-name="minreviews" aria-label="Sizing example input" aria-describedby="inputName">
+                        <input type="text" placeholder="Max" class="form-control productFilters" data-name="maxreviews" aria-label="Sizing example input" aria-describedby="inputName">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group mb-4">
+                        <span class="input-group-text" id="inputName"><i class="bi bi-cash-stack me-2"></i>Aylık Satış &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <input type="text" placeholder="Min" class="form-control productFilters" data-name="minsales" aria-label="Sizing example input" aria-describedby="inputName">
+                        <input type="text" placeholder="Max" class="form-control productFilters" data-name="maxsales" aria-label="Sizing example input" aria-describedby="inputName">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group mb-4">
+                        <span class="input-group-text" id="inputName"><i class="bi bi-chat-text me-2"></i>Ürün Puanı&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <input type="text" placeholder="Min" class="form-control productFilters" data-name="minrating" aria-label="Sizing example input" aria-describedby="inputName">
+                        <input type="text" placeholder="Max" class="form-control productFilters" data-name="maxrating" aria-label="Sizing example input" aria-describedby="inputName">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group mb-4">
+                        <span class="input-group-text" id="inputName"><i class="bi bi-star me-2"></i>Aylık Ciro&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <input type="text" placeholder="Min" class="form-control productFilters" data-name="minciro" aria-label="Sizing example input" aria-describedby="inputName">
+                        <input type="text" placeholder="Max" class="form-control productFilters" data-name="maxciro" aria-label="Sizing example input" aria-describedby="inputName">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group mb-4">
+                        <span class="input-group-text" id="inputName"><i class="bi bi-hand-thumbs-up me-2"></i>Ürün Favori&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <input type="text" placeholder="Min" class="form-control productFilters" data-name="minfavori" aria-label="Sizing example input" aria-describedby="inputName">
+                        <input type="text" placeholder="Max" class="form-control productFilters" data-name="maxfavori" aria-label="Sizing example input" aria-describedby="inputName">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group mb-4">
+                        <span class="input-group-text" id="inputName"><i class="bi bi-hand-thumbs-up me-2"></i>Satıcı Sayısı&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <input type="text" placeholder="Min" class="form-control productFilters" data-name="minmerchantcount" aria-label="Sizing example input" aria-describedby="inputName">
+                        <input type="text" placeholder="Max" class="form-control productFilters" data-name="maxmerchantcount" aria-label="Sizing example input" aria-describedby="inputName">
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="mb-3">
+                        <div id="select2Div">
+                            <select multiple="multiple" id="listInclude" style="padding-left:15px;width:100%;"></select>
+                        </div>
+                        <div id="kelime" class="text-muted text-size825 mt-2">
+                            <small>
+                                **Kelime veya Ürün Numarası Girişi (Kelimeleri dahil edebilir veya başlarına "-" koyarak dışarıda bırakabilirsiniz. Örn: ayakkabı,-erkek)
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <button onclick="getFunc()" type="submit" class="btn-filter w-100 mt-3 mb-4 justify-content-center" id="StartButton">
+                        Ürün Analizini Başlat<i class="bi bi-search" style=" margin-left: 6px; margin-top: -2px; "></i>
+                    </button>
+                </div>
+                <div class="col-md-3">
+                    <button onclick="toexcel()" type="submit" class="btn-filter w-100 mt-3 mb-4 justify-content-center" style="background-color: #34425A; border: 1px solid #34425A;" id="ToExcelButton">
+                        Excel'e Aktar<i class="bi bi-file-earmark-spreadsheet" style="margin-left: 6px;margin-top: -2px;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

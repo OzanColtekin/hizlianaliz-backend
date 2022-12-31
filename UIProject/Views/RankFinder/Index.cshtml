@@ -1,0 +1,100 @@
+﻿@using EntityLayer.Concrate
+@model List<ProductRanks>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Trendyol</a>
+    </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+    <br />
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <input type="text" class="form-control" placeholder="Ürün linkini giriniz..." name="url" id="url"/><br />
+            <input type="text" class="form-control" placeholder="Kelime giriniz" name="keyword" id="keyword" /><br />
+            <button class="btn btn-primary" id="addbtn">Ekle</button><br /><br />
+        @for (int x = Model.Count-1; x >= 0; x--)
+        {
+
+                <div class="card-deck">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Ürünün Sırası : @Model[x].RankNumber</h5>
+                            <div class="col-lg-4 grid-margin stretch-card" >
+                            <div class="card">
+                              <div class="card-body">
+                                <h4 class="card-title">Line chart</h4>
+                                <canvas id="myChart" style="height:150px"></canvas>
+                              </div>
+                            </div>
+                            </div>
+                            <img src="~/new-dashboard//template/assets/images/hizli_analiz_favicon-01.png" class="card-img" style="width:10rem; height:10rem;"/><a href="#" class="btn btn-danger float-right"><img src="~/web/img/girl.png" class="card-img" style="width:1rem; height:1rem;"/></a>
+                            <p class="card-text"><a href=@Model[x].ProductLink>Ürüne Gitmek İçin Tıklayınız.</a></p>
+                            <p class="card-text"><small class="text-muted">Ürünün '@Model[x].Keyword' adlı kelime araması içerisinde bulunduğu sıralamadır.</small></p>
+                            
+                        </div>
+                    </div>
+                </div><br />
+        }
+
+    </div>
+</div>
+
+
+@section Scripts{
+    <script>
+        var xValues = ["25-03","26-03","27-03","28-03","29-03","29-03","30-03"];
+        var yValues = [1,3,2,3,4,5,4];
+
+        new Chart("myChart", {
+          type: "line",
+          data: {
+            labels: xValues,
+            datasets: [{
+              fill: false,
+              lineTension: 0,
+              backgroundColor: "rgba(0,0,255,1.0)",
+              borderColor: "rgba(0,0,255,0.1)",
+              data: yValues
+            }]
+          },
+          options: {
+            legend: {display: false}
+          }
+        });
+    </script>
+    <script>
+
+        $('#addbtn').click(function(){
+            var value = document.getElementById('url').value
+            var key = document.getElementById('keyword').value
+            if(value.length == 0 || key.length == 0) return toastr["error"]("Ürün link / kelime alanı boş geçilemez.","Hata")
+            var sendData = {
+                url: value,
+                keyword: key
+            };
+            $.ajax({
+                type: "Post",
+                data: sendData,
+                url:"/RankFinder/AddProduct/",
+
+                success: function(args){
+                    var result = jQuery.parseJSON(args);
+                    if(result["result"] == false) return toastr["error"]("Ürün eklenirken bir hata oluştu!","Hata");
+                    toastr["success"]("Ürün başarı ile eklendi.","Ürün Ekle");
+                    setTimeout(()=>{
+                        window.location = "/RankFinder/" 
+                    },1500);
+                    
+                }
+
+            });
+        });
+
+    </script>
+}
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
