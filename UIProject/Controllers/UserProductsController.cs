@@ -14,6 +14,7 @@ namespace UIProject.Controllers
         {
             string mail = HttpContext.User.Identity.Name;
             var inf = context.Users.FirstOrDefault(x => x.UserMail == mail);
+            if (trendyolAPI.checkAPI(inf.UserID) == false) return RedirectToAction("Index", "API");
             ViewBag.UserName = inf.UserName + " " + inf.UserSurName;
             ViewBag.isAdmin = inf.IsAdmin;
             ViewBag.DarkTheme = inf.DarkMode;

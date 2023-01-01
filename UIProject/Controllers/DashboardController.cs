@@ -3,16 +3,19 @@ using DataAccessLayer.Concrate;
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using UIProject.Models.API;
 
 namespace UIProject.Controllers
 {
     public class DashboardController : Controller
     {
         readonly Context context = new();
+        readonly TrendyolAPI trendyolAPI = new();
         public IActionResult Index()
         {
             string mail = HttpContext.User.Identity.Name;
             var inf = context.Users.FirstOrDefault(x => x.UserMail == mail);
+            if (trendyolAPI.checkAPI(inf.UserID) == false) return RedirectToAction("Index", "API");
             ViewBag.DarkTheme = inf.DarkMode;
             ViewBag.UserName = inf.UserName + " " + inf.UserSurName;
             ViewBag.isAdmin = inf.IsAdmin;

@@ -5,17 +5,19 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UIProject.Models.API;
 
 namespace UIProject.Controllers
 {
     public class RankFinderController : Controller
     {
         private readonly Context context = new();
+        readonly TrendyolAPI trendyolAPI = new();
         public IActionResult Index()
         {
             string mail = HttpContext.User.Identity.Name;
             var inf = context.Users.FirstOrDefault(x => x.UserMail == mail);
-            if (inf == null) return RedirectToAction("index", "Login");
+            if (trendyolAPI.checkAPI(inf.UserID) == false) return RedirectToAction("Index", "API");
             ViewBag.UserName = inf.UserName + " " + inf.UserSurName;
             ViewBag.isAdmin = inf.IsAdmin;
             ViewBag.DarkTheme = inf.DarkMode;

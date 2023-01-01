@@ -1,16 +1,19 @@
 ﻿using DataAccessLayer.Concrate;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using UIProject.Models.API;
 
 namespace UIProject.Controllers
 {
     public class OrdersController : Controller
     {
         private readonly Context context = new();
+        readonly TrendyolAPI trendyolAPI = new();
         public IActionResult Index()
         {
             string mail = HttpContext.User.Identity.Name;
             var inf = context.Users.FirstOrDefault(x => x.UserMail == mail);
+            if (trendyolAPI.checkAPI(inf.UserID) == false) return RedirectToAction("Index", "API");
             ViewBag.UserName = inf.UserName + " " + inf.UserSurName;
             ViewBag.isAdmin = inf.IsAdmin;
             ViewBag.DarkTheme = inf.DarkMode;

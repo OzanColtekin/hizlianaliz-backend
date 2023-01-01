@@ -16,6 +16,14 @@ namespace UIProject.Models.API
     public class TrendyolAPI
     {
         readonly Context _context = new();
+
+        public bool checkAPI(int UserID)
+        {
+            var kisi = _context.UserAPIs.Where(x => x.UserID == UserID).FirstOrDefault();
+            if (kisi == null) return false;
+            return true;
+        }
+
         public int GetProduct(int UserID)
         {
             var kisi = _context.UserAPIs.Where(x => x.UserID == UserID && x.MarketID == 1).FirstOrDefault();
