@@ -134,7 +134,14 @@ namespace UIProject.Models.API
                 JObject json = JObject.Parse(result);
                 foreach(var e in json.SelectToken("content"))
                 {
-                    //burayı doldurcam
+                    Orders ord = new()
+                    {
+                        UserID = UserID,
+                        orderNumber = Convert.ToDouble(e["orderNumber"]),
+                        status = e["status"].ToString(),
+                        totalPrice = Convert.ToDouble(e["totalPrice"]),
+                        orderDate = DateTime.UnixEpoch.AddSeconds(Convert.ToDouble(e["orderDate"]))
+                    };
                 }
             }
         }

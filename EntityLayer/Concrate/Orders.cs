@@ -12,6 +12,9 @@ namespace EntityLayer.Concrate
         [Key]
         public int OrderId { get; set; }
         public double orderNumber { get; set; }
+        public string status { get; set; }
+        public double totalPrice { get; set; }
+        public DateTime orderDate { get; set; }
         public int UserID { get; set; }
         public virtual Users User { get; set; }
 
