@@ -12,7 +12,7 @@ namespace DataAccessLayer.Concrate
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=104.247.162.242\\MSSQLSERVER2019;database=hizliana_core;user=hizliana_core;password=%cXv6l222");
+            optionsBuilder.UseSqlServer("");
         }
 
         public DbSet<Alerts> Alerts { get; set; }
